@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лучший барбершоп в городе. Классические и современные мужские стрижки, оформление бороды.">
+    <title>Barbershop | Мужские стрижки</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка с меню -->
+    <header>
+        <div class="header-container">
+            <nav>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="hero-text">
+                <h1>Barbershop "Blade & Fade"</h1>
+                <p>Стиль, который говорит за тебя</p>
+                <a href="#contacts" class="btn-primary">Записаться</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- О нас -->
+        <section id="about" class="container">
+            <h2>О нас</h2>
+            <article class="about-content">
+                <p>Мы — команда профессиональных барберов. Мы ценим традиции классической мужской стрижки и следим за современными трендами. Наша задача — подчеркнуть твою индивидуальность.</p>
+                <!-- Добавлена ссылка на реальное фото с Unsplash -->
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80" alt="Команда барберов за работой в салоне">
+            </article>
+        </section>
+
+        <!-- Услуги -->
+        <section id="services" class="container">
+            <h2>Наши услуги</h2>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Классическая стрижка</h3>
+                    <p>Традиционная стрижка ножницами и машинкой. Включает мытье головы и укладку.</p>
+                    <span class="price">от 5000 ₸</span>
+                </article>
+
+                <article class="service-card">
+                    <h3>Оформление бороды</h3>
+                    <p>Придание формы бороде, бритье опасной бритвой с горячим полотенцем.</p>
+                    <span class="price">от 3500 ₸</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Контакты и форма -->
+        <section id="contacts" class="container">
+            <h2>Записаться к мастеру</h2>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required placeholder="Например, Александр">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Ваш Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Пожелания или время записи:</label>
+                    <textarea id="message" name="message" required placeholder="Хочу записаться на пятницу вечером..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">Отправить заявку</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2026 Barbershop "Blade & Fade". Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
