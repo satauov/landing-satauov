@@ -1,0 +1,250 @@
+/* Подключаем стильный шрифт Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+/* Базовые настройки (Сброс стилей) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Настройки всей страницы: темная тема */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Контейнер для центрирования контента */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Заголовки */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #d4af37; /* Золотой акцент */
+    margin: 15px auto 0;
+}
+
+/* ================= ШАПКА ================= */
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
+                url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=80') center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 25px;
+    background-color: rgba(10, 10, 10, 0.95);
+    border-bottom: 2px solid #d4af37;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d4af37; /* Золотой при наведении */
+}
+
+.hero-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+/* ================= КНОПКИ ================= */
+.btn-primary {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #fce280;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ================= О НАС ================= */
+.about-content {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.about-content p {
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* ================= УСЛУГИ ================= */
+.services-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Для адаптивности */
+}
+
+.service-card {
+    background-color: #1e1e1e;
+    padding: 40px 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+}
+
+.service-card h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.price {
+    display: block;
+    font-size: 1.4rem;
+    color: #d4af37;
+    font-weight: 700;
+}
+
+/* ================= ФОРМА КОНТАКТОВ ================= */
+.contact-form {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+}
+
+/* ================= ПОДВАЛ ================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0a0a0a;
+    border-top: 1px solid #222;
+    color: #777;
+}
+
+/* ================= АДАПТИВНОСТЬ (МОБИЛКИ) ================= */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
