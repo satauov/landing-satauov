@@ -1,6 +1,11 @@
 /* Подключаем стильный шрифт Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
+/* Плавная прокрутка страницы */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Базовые настройки (Сброс стилей) */
 * {
     margin: 0;
@@ -51,14 +56,17 @@ header {
     flex-direction: column;
 }
 
+/* --- НОВОЕ: Матовое стекло (Glassmorphism) для меню --- */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 25px;
-    background-color: rgba(10, 10, 10, 0.95);
-    border-bottom: 2px solid #d4af37;
+    background-color: rgba(10, 10, 10, 0.4); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.5);
 }
 
 nav ul li a {
@@ -120,6 +128,23 @@ nav ul li a:hover {
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
 }
 
+/* --- НОВОЕ: Пульсирующая анимация для главной кнопки в шапке --- */
+.hero-text .btn-primary {
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
 /* ================= О НАС ================= */
 .about-content {
     text-align: center;
@@ -133,11 +158,19 @@ nav ul li a:hover {
     margin-right: auto;
 }
 
+/* --- НОВОЕ: Эффект динамической цветокоррекции для фото --- */
 .about-content img {
     width: 100%;
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    filter: grayscale(80%) contrast(1.2);
+    transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.about-content img:hover {
+    filter: grayscale(0%) contrast(1.1);
+    transform: scale(1.02);
 }
 
 /* ================= УСЛУГИ ================= */
