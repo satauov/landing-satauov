@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Лучший барбершоп в городе. Классические и современные мужские стрижки, оформление бороды.">
+    <meta name="description" content="Лучший барбершоп. Классические и современные мужские стрижки, оформление бороды.">
     <title>Barbershop | Мужские стрижки</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Шапка с меню -->
-    <header>
-        <div class="header-container">
-            <nav>
-                <ul>
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </nav>
-            <div class="hero-text">
-                <h1>Barbershop "Blade & Fade"</h1>
-                <p>Стиль, который говорит за тебя</p>
-                <a href="#contacts" class="btn-primary">Записаться</a>
-            </div>
+    <!-- Липкое меню навигации -->
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Шапка сайта -->
+    <header id="home">
+        <div class="hero-text">
+            <h1>Blade & Fade</h1>
+            <p>Стиль, который говорит за тебя</p>
+            <a href="#contacts" class="btn-primary">Записаться к мастеру</a>
         </div>
     </header>
 
@@ -33,9 +34,8 @@
         <section id="about" class="container">
             <h2>О нас</h2>
             <article class="about-content">
-                <p>Мы — команда профессиональных барберов. Мы ценим традиции классической мужской стрижки и следим за современными трендами. Наша задача — подчеркнуть твою индивидуальность.</p>
-                <!-- Добавлена ссылка на реальное фото с Unsplash -->
-                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80" alt="Команда барберов за работой в салоне">
+                <p>Мы — больше, чем просто парикмахерская. Это мужской клуб, где чтят традиции классической стрижки и следят за трендами. Идеальный фейд, опасная бритва, горячее полотенце и чашка отличного кофе — наша задача сделать так, чтобы ты выглядел и чувствовал себя на все 100%.</p>
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80" alt="Команда барберов за работой">
             </article>
         </section>
 
@@ -44,22 +44,48 @@
             <h2>Наши услуги</h2>
             <div class="services-grid">
                 <article class="service-card">
-                    <h3>Классическая стрижка</h3>
-                    <p>Традиционная стрижка ножницами и машинкой. Включает мытье головы и укладку.</p>
+                    <div class="card-icon">✂️</div>
+                    <h3>Стрижка</h3>
+                    <p>Классика или трендовый фейд. Включает подбор стиля, мытье головы и премиальную укладку.</p>
                     <span class="price">от 5000 ₸</span>
                 </article>
 
                 <article class="service-card">
-                    <h3>Оформление бороды</h3>
-                    <p>Придание формы бороде, бритье опасной бритвой с горячим полотенцем.</p>
+                    <div class="card-icon">🪒</div>
+                    <h3>Борода</h3>
+                    <p>Моделирование формы, королевское бритье опасной бритвой с использованием горячего полотенца.</p>
                     <span class="price">от 3500 ₸</span>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Комбо</h3>
+                    <p>Полный комплекс: стрижка + оформление бороды. Идеальный вариант для экономии времени.</p>
+                    <span class="price">от 7500 ₸</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- НОВАЯ СЕКЦИЯ: Отзывы -->
+        <section id="reviews" class="container">
+            <h2>Отзывы клиентов</h2>
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Отличный сервис, мастера реально знают свое дело. Лучший фейд, который мне делали. Рекомендую!"</p>
+                    <h4>— Арман К.</h4>
+                </article>
+                <article class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Атмосферное место. Угостили кофе, подстригли идеально, еще и советы по укладке дали. Обязательно вернусь."</p>
+                    <h4>— Тимур Б.</h4>
                 </article>
             </div>
         </section>
 
         <!-- Контакты и форма -->
         <section id="contacts" class="container">
-            <h2>Записаться к мастеру</h2>
+            <h2>Ждем тебя</h2>
             <form action="#" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="name">Ваше имя:</label>
@@ -81,9 +107,21 @@
         </section>
     </main>
 
-    <!-- Подвал -->
+    <!-- Улучшенный Подвал -->
     <footer>
-        <p>&copy; 2026 Barbershop "Blade & Fade". Все права защищены.</p>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Blade & Fade</h3>
+                <p>📍 г. Алматы, ул. Центральная, 15</p>
+                <p>📞 +7 (777) 123-45-67</p>
+            </div>
+            <div class="footer-hours">
+                <h3>Режим работы</h3>
+                <p>Пн - Вс: 10:00 - 22:00</p>
+                <p>Без выходных</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Barbershop "Blade & Fade". Все права защищены.</p>
     </footer>
 
 </body>
