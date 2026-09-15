@@ -42,7 +42,6 @@ h2::after {
     border-radius: 2px;
 }
 
-/* ================= ЛИПКОЕ МЕНЮ ================= */
 .sticky-nav {
     position: fixed;
     top: 0;
@@ -77,7 +76,6 @@ h2::after {
     color: #d4af37;
 }
 
-/* ================= ШАПКА И ПЛАШКИ ================= */
 header {
     background: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
     height: 100vh;
@@ -86,7 +84,10 @@ header {
 
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
     background: rgba(0, 0, 0, 0.78);
     display: flex;
     justify-content: center;
@@ -101,7 +102,6 @@ header {
     margin-top: 40px;
 }
 
-/* Большая премиальная надпись по центру */
 .hero-content h1 {
     font-size: 3.8rem;
     font-weight: 800;
@@ -120,7 +120,6 @@ header {
     letter-spacing: 2px;
 }
 
-/* Отдельные премиальные плашки (как кнопки) */
 .info-badges {
     display: flex;
     gap: 20px;
@@ -152,7 +151,9 @@ header {
 }
 
 .badge-icon {
-    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .badge-text {
@@ -175,7 +176,6 @@ header {
     font-weight: 600;
 }
 
-/* Соцсети и кнопка записи */
 .hero-action {
     display: flex;
     flex-direction: column;
@@ -189,7 +189,8 @@ header {
 }
 
 .social-icons a {
-    width: 42px; height: 42px;
+    width: 42px; 
+    height: 42px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     display: flex;
@@ -198,6 +199,7 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.8rem;
     border: 1px solid rgba(212, 175, 55, 0.3);
     transition: all 0.3s ease;
 }
@@ -209,7 +211,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* ================= КНОПКИ ================= */
 .btn-primary {
     display: inline-block;
     background: linear-gradient(45deg, #b8860b, #d4af37);
@@ -238,7 +239,6 @@ header {
     100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
 
-/* ================= О НАС ================= */
 .about-content {
     text-align: center;
     font-size: 1.15rem;
@@ -266,7 +266,6 @@ header {
     transform: scale(1.02);
 }
 
-/* ================= УСЛУГИ ================= */
 .services-grid {
     display: flex;
     gap: 30px;
@@ -291,8 +290,9 @@ header {
 }
 
 .card-icon {
-    font-size: 2.5rem;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .service-card h3 {
@@ -313,7 +313,6 @@ header {
     font-weight: 700;
 }
 
-/* ================= ОТЗЫВЫ ================= */
 .reviews-grid {
     display: flex;
     gap: 30px;
@@ -347,7 +346,6 @@ header {
     text-align: right;
 }
 
-/* ================= ФОРМА КОНТАКТОВ ================= */
 .contact-form {
     background: #161618;
     padding: 40px;
@@ -393,7 +391,6 @@ textarea {
     width: 100%;
 }
 
-/* ================= ПОДВАЛ ================= */
 footer {
     background-color: #080809;
     padding: 50px 20px 20px;
@@ -429,7 +426,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ================= АДАПТИВНОСТЬ ================= */
 @media (max-width: 768px) {
     .hero-content h1 { font-size: 2.2rem; }
     .sticky-nav ul { gap: 15px; padding: 12px; }
