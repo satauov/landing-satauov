@@ -1,7 +1,9 @@
 Тема: Лендинг для барбершопа (HTML5 + CSS3)
-Ссылка на сайт: https://satauov.github.io/landing-satauov/
+🔗 Живой сайт: https://satauov.github.io/landing-satauov/
+📁 Репозиторий: https://github.com/satauov/landing-satauov
 Что реализовано:
-Семантическая разметка HTML5 (header, main, section, footer, nav, article).
-4 логических блока: шапка, «о нас», услуги, контакты.
-Форма обратной связи с необходимыми атрибутами (required, label).
-Адаптивность для мобильных устройств (375px) и десктопов (1280px) через CSS-медиазапросы.
+• Семантика HTML5: header, nav, main, section, article, footer.
+• Структура: шапка с контактами, «о нас», услуги, отзывы, форма записи.
+• Форма: поля Имя, Email, Сообщение (label, required).
+• Адаптивность: отлично выглядит на 375px и 1280px+.
+• SEO и доступность: title, meta description, viewport, favicon, атрибуты alt.
