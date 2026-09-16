@@ -264,6 +264,59 @@ header {
     transform: scale(1.02);
 }
 
+/* ================= МАСТЕРА ================= */
+.masters-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.master-card {
+    background: #161618;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    border: 1px solid #2a2a2e;
+    transition: transform 0.3s, border-color 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.master-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.master-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.master-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+.master-card h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.master-card p {
+    color: #d4af37;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ================= УСЛУГИ ================= */
 .services-grid {
     display: flex;
     gap: 30px;
@@ -311,6 +364,7 @@ header {
     font-weight: 700;
 }
 
+/* ================= ОТЗЫВЫ ================= */
 .reviews-grid {
     display: flex;
     gap: 30px;
@@ -344,6 +398,7 @@ header {
     text-align: right;
 }
 
+/* ================= ФОРМА КОНТАКТОВ ================= */
 .contact-form {
     background: #161618;
     padding: 40px;
@@ -389,6 +444,7 @@ textarea {
     width: 100%;
 }
 
+/* ================= ПОДВАЛ ================= */
 footer {
     background-color: #080809;
     padding: 50px 20px 20px;
@@ -424,6 +480,7 @@ footer {
     font-size: 0.9rem;
 }
 
+/* ================= АДАПТИВНОСТЬ ================= */
 @media (max-width: 768px) {
     .hero-content h1 { font-size: 2.2rem; }
     .sticky-nav ul { gap: 15px; padding: 12px; }
