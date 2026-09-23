@@ -32,15 +32,17 @@ img { max-width: 100%; height: auto; display: block; }
 @media (min-width: 768px) { .hero__subtitle { font-size: 1.3rem; margin-bottom: 35px; letter-spacing: 2px; } }
 
 /* BEM: Плашки (Меньше на мобильных) */
+/* BEM: Плашки */
 .info-badges { display: flex; flex-direction: column; gap: 15px; justify-content: center; margin-bottom: 25px; }
-@media (min-width: 768px) { .info-badges { flex-direction: row; gap: 20px; margin-bottom: 35px; } }
-.badge { background: linear-gradient(145deg, rgba(26, 26, 28, 0.9), rgba(18, 18, 20, 0.9)); border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 12px; flex: 1; text-align: left; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-@media (min-width: 768px) { .badge { padding: 18px 25px; min-width: 270px; } }
+@media (min-width: 768px) { .info-badges { flex-direction: row; flex-wrap: wrap; gap: 15px; margin-bottom: 35px; } }
+.badge { background: linear-gradient(145deg, rgba(26, 26, 28, 0.9), rgba(18, 18, 20, 0.9)); border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 10px; flex: 1; text-align: left; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+@media (min-width: 768px) { .badge { padding: 15px; min-width: 200px; } }
+@media (min-width: 1024px) { .badge { padding: 18px 25px; min-width: 260px; } }
 .badge__icon { display: flex; align-items: center; justify-content: center; }
 .badge__text { display: flex; flex-direction: column; }
 .badge__title { font-size: 0.7rem; text-transform: uppercase; color: #d4af37; margin-bottom: 3px; font-weight: 600; }
 .badge__desc { font-size: 0.85rem; color: #fff; font-weight: 600; }
-@media (min-width: 768px) { .badge__title { font-size: 0.75rem; letter-spacing: 1.5px; } .badge__desc { font-size: 0.95rem; } }
+@media (min-width: 768px) { .badge__title { font-size: 0.75rem; letter-spacing: 1.5px; } .badge__desc { font-size: 0.9rem; } }
 
 .hero__action { display: flex; justify-content: center; }
 .btn { display: inline-block; padding: 14px 35px; text-decoration: none; font-weight: 800; text-transform: uppercase; border-radius: 6px; border: none; cursor: pointer; font-family: inherit; transition: all 0.3s ease; animation: pulse-glow 2.5s infinite; font-size: 0.9rem; }
