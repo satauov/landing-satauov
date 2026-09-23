@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Лучший барбершоп в Алматы. Классические и современные мужские стрижки.">
     <title>Barbershop Алматы | Мужские стрижки</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💈%3C/text%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page">
 
-    <nav class="nav" aria-label="Основное меню">
+    <!-- BEM: Навигация с CSS-бургером -->
+    <nav class="nav">
+        <!-- Невидимый чекбокс для открытия меню без JS -->
+        <input type="checkbox" id="nav-toggle" class="nav__toggle">
+        <div class="nav__mobile">
+            <label for="nav-toggle" class="nav__burger">
+                <span class="nav__burger-line"></span>
+                <span class="nav__burger-line"></span>
+                <span class="nav__burger-line"></span>
+            </label>
+        </div>
         <ul class="nav__list">
             <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
             <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
             <li class="nav__item"><a href="#masters" class="nav__link">Мастера</a></li>
             <li class="nav__item"><a href="#services" class="nav__link">Услуги</a></li>
-            <li class="nav__item"><a href="#reviews" class="nav__link">Отзывы</a></li>
             <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
         </ul>
     </nav>
@@ -27,13 +33,13 @@
     <header id="home" class="hero">
         <div class="hero__overlay">
             <div class="hero__content">
-                <h1 class="hero__title">Barbershop "Blade &amp; Fade"</h1>
+                <h1 class="hero__title">Barbershop "Blade & Fade"</h1>
                 <p class="hero__subtitle">Стиль, который говорит за тебя</p>
-
+                
                 <div class="info-badges">
                     <div class="badge">
                         <span class="badge__icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         </span>
                         <div class="badge__text">
                             <span class="badge__title">График работы</span>
@@ -43,7 +49,7 @@
 
                     <div class="badge">
                         <span class="badge__icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         </span>
                         <div class="badge__text">
                             <span class="badge__title">Наш адрес</span>
@@ -53,11 +59,11 @@
 
                     <div class="badge">
                         <span class="badge__icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         </span>
                         <div class="badge__text">
                             <span class="badge__title">Телефон</span>
-                            <a href="tel:+78705345780" class="badge__desc badge__desc--link">8 705 345 78 60</a>
+                            <span class="badge__desc">8 705 345 78 60</span>
                         </div>
                     </div>
                 </div>
@@ -69,13 +75,13 @@
         </div>
     </header>
 
-    <main>
+    <main class="main-content">
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section__title">О нас</h2>
                 <div class="about">
                     <p class="about__text">Мы — больше, чем просто парикмахерская. Это мужской клуб, где чтят традиции классической стрижки и следят за трендами. Идеальный фейд, опасная бритва, горячее полотенце и чашка отличного кофе — наша задача сделать так, чтобы ты выглядел и чувствовал себя на все 100%.</p>
-                    <img class="about__img" src="images/main.jpg" alt="Команда барберов" loading="lazy" decoding="async">
+                    <img class="about__img" src="images/main.jpg" alt="Команда барберов">
                 </div>
             </div>
         </section>
@@ -83,14 +89,14 @@
         <section id="masters" class="section">
             <div class="container">
                 <h2 class="section__title">Наши мастера</h2>
-                <div class="grid grid--duo">
+                <div class="grid">
                     <article class="master-card">
-                        <img class="master-card__img" src="images/barber1.jpg" alt="Барбер Максат" loading="lazy" decoding="async">
+                        <img class="master-card__img" src="images/barber1.jpg" alt="Барбер Максат">
                         <h3 class="master-card__name">Максат</h3>
                         <p class="master-card__role">Топ-барбер</p>
                     </article>
                     <article class="master-card">
-                        <img class="master-card__img" src="images/barber2.jpg" alt="Барбер Тимур" loading="lazy" decoding="async">
+                        <img class="master-card__img" src="images/barber2.jpg" alt="Барбер Тимур">
                         <h3 class="master-card__name">Тимур</h3>
                         <p class="master-card__role">Барбер-стилист</p>
                     </article>
@@ -104,7 +110,7 @@
                 <div class="grid">
                     <article class="card">
                         <div class="card__icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
                         </div>
                         <h3 class="card__title">Стрижка</h3>
                         <p class="card__desc">Классика или трендовый фейд. Включает подбор стиля, мытье головы и премиальную укладку.</p>
@@ -113,7 +119,7 @@
 
                     <article class="card">
                         <div class="card__icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                         </div>
                         <h3 class="card__title">Борода</h3>
                         <p class="card__desc">Моделирование формы, королевское бритье опасной бритвой с использованием горячего полотенца.</p>
@@ -122,7 +128,7 @@
 
                     <article class="card">
                         <div class="card__icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                         </div>
                         <h3 class="card__title">Комбо</h3>
                         <p class="card__desc">Полный комплекс: стрижка + оформление бороды. Идеальный вариант для экономии времени.</p>
@@ -135,17 +141,17 @@
         <section id="reviews" class="section">
             <div class="container">
                 <h2 class="section__title">Отзывы клиентов</h2>
-                <div class="grid grid--duo">
-                    <blockquote class="review-card">
-                        <div class="review-card__stars" role="img" aria-label="Оценка: 5 из 5">★★★★★</div>
+                <div class="grid">
+                    <article class="review-card">
+                        <div class="review-card__stars">★★★★★</div>
                         <p class="review-card__text">"Отличный сервис, мастера реально знают свое дело. Лучший фейд, который мне делали. Рекомендую!"</p>
-                        <cite class="review-card__author">— Арман К.</cite>
-                    </blockquote>
-                    <blockquote class="review-card">
-                        <div class="review-card__stars" role="img" aria-label="Оценка: 5 из 5">★★★★★</div>
+                        <h4 class="review-card__author">— Арман К.</h4>
+                    </article>
+                    <article class="review-card">
+                        <div class="review-card__stars">★★★★★</div>
                         <p class="review-card__text">"Атмосферное место. Угостили кофе, подстригли идеально, еще и советы по укладке дали. Обязательно вернусь."</p>
-                        <cite class="review-card__author">— Али Б.</cite>
-                    </blockquote>
+                        <h4 class="review-card__author">— Али Б.</h4>
+                    </article>
                 </div>
             </div>
         </section>
@@ -156,11 +162,11 @@
                 <form action="#" method="POST" class="form">
                     <div class="form__group">
                         <label for="name" class="form__label">Ваше имя:</label>
-                        <input type="text" id="name" name="name" class="form__input" required autocomplete="name" placeholder="Например, Александр">
+                        <input type="text" id="name" name="name" class="form__input" required placeholder="Например, Александр">
                     </div>
                     <div class="form__group">
                         <label for="email" class="form__label">Ваш Email:</label>
-                        <input type="email" id="email" name="email" class="form__input" required autocomplete="email" placeholder="example@mail.com">
+                        <input type="email" id="email" name="email" class="form__input" required placeholder="example@mail.com">
                     </div>
                     <div class="form__group">
                         <label for="message" class="form__label">Пожелания или время записи:</label>
@@ -174,19 +180,19 @@
 
     <footer class="footer">
         <div class="container">
-        <div class="footer__content">
-            <div class="footer__info">
-                <h2 class="footer__title">Barbershop "Blade &amp; Fade"</h2>
-                <p class="footer__text"><span aria-hidden="true">📍</span> г. Алматы, ул. Утеген Батыра 88</p>
-                <p class="footer__text"><span aria-hidden="true">📞</span> <a href="tel:+78705345780" class="footer__link">8 705 345 78 60</a></p>
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Barbershop "Blade & Fade"</h3>
+                    <p class="footer__text">📍 г. Алматы, ул. Утеген Батыра 88</p>
+                    <p class="footer__text">📞 8 705 345 78 60</p>
+                </div>
+                <div class="footer__hours">
+                    <h3 class="footer__title">Режим работы</h3>
+                    <p class="footer__text">Пн - Вс: 10:00 - 22:00</p>
+                    <p class="footer__text">Без выходных</p>
+                </div>
             </div>
-            <div class="footer__hours">
-                <h2 class="footer__title">Режим работы</h2>
-                <p class="footer__text">Пн - Вс: 10:00 - 22:00</p>
-                <p class="footer__text">Без выходных</p>
-            </div>
-        </div>
-        <p class="footer__copyright">&copy; 2026 Barbershop "Blade &amp; Fade". Все права защищены.</p>
+            <p class="footer__copyright">&copy; 2026 Barbershop "Blade & Fade". Все права защищены.</p>
         </div>
     </footer>
 
