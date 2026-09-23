@@ -1,94 +1,462 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap");
+/* ==========================================================================
+   Barbershop "Blade & Fade" — стили (BEM)
+   Этот файл — результат компиляции style.scss
+   ========================================================================== */
 
-/* Базовые настройки */
-html { scroll-behavior: smooth; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "Montserrat", sans-serif; background-color: #0f0f11; color: #e0e0e0; line-height: 1.6; }
-img { max-width: 100%; height: auto; display: block; }
+/* --- База ---------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 190px;
+}
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 0;
+  }
+}
 
-/* BEM: Заголовки секций */
-.section__title { text-align: center; font-size: 2.8rem; color: #ffffff; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 2px; }
-.section__title::after { content: ''; display: block; width: 80px; height: 4px; background: linear-gradient(90deg, #d4af37, #fce280); margin: 15px auto 0; border-radius: 2px; }
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #0f0f11;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
 
-/* BEM: Меню (Складывается на мобильном) */
-.nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background-color: rgba(15, 15, 17, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
-.nav__list { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 15px; }
-@media (min-width: 768px) { .nav__list { flex-direction: row; justify-content: center; gap: 35px; padding: 18px; } }
-.nav__link { color: #fff; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: color 0.3s; }
-.nav__link:hover { color: #d4af37; }
+:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}
 
-/* BEM: Главный экран (Вернули красивый фон) */
-.hero { height: 100vh; position: relative; background: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat; }
-.hero__overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.78); display: flex; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
-.hero__content { max-width: 1000px; width: 100%; margin-top: 40px; }
-.hero__title { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
-@media (min-width: 768px) { .hero__title { font-size: 3.8rem; } }
-.hero__subtitle { font-size: 1.3rem; color: #b0b0b0; margin-bottom: 35px; font-weight: 300; letter-spacing: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
 
-/* BEM: Информационные плашки */
-.info-badges { display: flex; flex-direction: column; gap: 20px; justify-content: center; margin-bottom: 35px; flex-wrap: wrap; }
-@media (min-width: 768px) { .info-badges { flex-direction: row; } }
-.badge { background: linear-gradient(145deg, rgba(26, 26, 28, 0.9), rgba(18, 18, 20, 0.9)); border: 1px solid rgba(212, 175, 55, 0.3); padding: 18px 25px; border-radius: 8px; display: flex; align-items: center; gap: 15px; flex: 1; min-width: 270px; text-align: left; box-shadow: 0 10px 25px rgba(0,0,0,0.5); transition: transform 0.3s ease, border-color 0.3s ease; }
-.badge:hover { transform: translateY(-5px); border-color: #d4af37; box-shadow: 0 15px 30px rgba(0,0,0,0.7), 0 0 15px rgba(212,175,55,0.2); }
-.badge__icon { display: flex; align-items: center; justify-content: center; }
-.badge__text { display: flex; flex-direction: column; }
-.badge__title { font-size: 0.75rem; text-transform: uppercase; color: #d4af37; margin-bottom: 3px; letter-spacing: 1.5px; font-weight: 600; }
-.badge__desc { font-size: 0.95rem; color: #fff; font-weight: 600; }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
 
-.hero__action { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+/* --- Заголовок секции ---------------------------------------------------- */
+.section__title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.section__title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #fce280);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
 
-/* BEM: Кнопки */
-.btn { display: inline-block; padding: 16px 45px; text-decoration: none; font-weight: 800; text-transform: uppercase; border-radius: 6px; border: none; cursor: pointer; font-family: inherit; transition: all 0.3s ease; animation: pulse-glow 2.5s infinite; }
-.btn--primary { background: linear-gradient(45deg, #b8860b, #d4af37); color: #000; }
-.btn--primary:hover { transform: translateY(-3px) scale(1.03); background: linear-gradient(45deg, #d4af37, #fce280); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5); }
-@keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
+/* --- Меню ---------------------------------------------------------------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(15, 15, 17, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  .nav__list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 35px;
+    padding: 18px;
+  }
+}
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.nav__link:hover {
+  color: #d4af37;
+}
 
-/* BEM: Сетка карточек */
-.grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+/* --- Hero ---------------------------------------------------------------- */
+.hero {
+  background: url("images/main.jpg") center/cover no-repeat;
+}
+.hero__overlay {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.78);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero__content {
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 40px;
+}
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 3.8rem;
+  }
+}
+.hero__subtitle {
+  font-size: 1.3rem;
+  color: #b0b0b0;
+  margin-bottom: 35px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.hero__action {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-/* BEM: О нас */
-.about { text-align: center; }
-.about__text { margin: 0 auto 40px; max-width: 800px; color: #b3b3b3; font-size: 1.15rem; }
-.about__img { width: 100%; max-width: 900px; margin: 0 auto; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.9); filter: grayscale(100%) contrast(1.2); transition: all 0.6s ease; }
-.about__img:hover { filter: grayscale(0%) contrast(1.1); transform: scale(1.02); }
+/* --- Плашки с информацией ------------------------------------------------ */
+.info-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+@media (min-width: 768px) {
+  .info-badges {
+    flex-direction: row;
+  }
+}
 
-/* BEM: Мастера */
-.master-card { background: #161618; padding: 20px; border-radius: 12px; width: 100%; max-width: 320px; text-align: center; border: 1px solid #2a2a2e; transition: transform 0.3s, border-color 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-.master-card:hover { transform: translateY(-8px); border-color: #d4af37; }
-.master-card__img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; filter: grayscale(100%); transition: filter 0.5s ease, transform 0.5s ease; }
-.master-card:hover .master-card__img { filter: grayscale(0%); transform: scale(1.02); }
-.master-card__name { color: #fff; font-size: 1.5rem; margin-bottom: 5px; }
-.master-card__role { color: #d4af37; font-weight: 600; font-size: 1rem; }
+.badge {
+  background: linear-gradient(145deg, rgba(26, 26, 28, 0.9), rgba(18, 18, 20, 0.9));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 18px 25px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  text-align: left;
+}
+.badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+}
+.badge__text {
+  display: flex;
+  flex-direction: column;
+}
+.badge__title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #d4af37;
+  margin-bottom: 3px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+.badge__desc {
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 600;
+}
+.badge__desc--link {
+  text-decoration: none;
+}
 
-/* BEM: Услуги */
-.card { background: #161618; padding: 40px 30px; border-radius: 10px; width: 100%; max-width: 340px; text-align: center; border: 1px solid #2a2a2e; transition: transform 0.3s, border-color 0.3s; }
-.card:hover { transform: translateY(-8px); border-color: #d4af37; }
-.card__icon { margin-bottom: 15px; display: flex; justify-content: center; }
-.card__title { color: #fff; font-size: 1.5rem; margin-bottom: 12px; }
-.card__desc { color: #999; margin-bottom: 20px; }
-.card__price { display: inline-block; font-size: 1.3rem; color: #d4af37; font-weight: 700; }
+/* --- Кнопки -------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 16px 45px;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn--primary {
+  background: linear-gradient(45deg, #b8860b, #d4af37);
+  color: #000;
+}
+.btn--primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(45deg, #d4af37, #fce280);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+}
 
-/* BEM: Отзывы */
-.review-card { background-color: #161618; padding: 35px; border-radius: 10px; width: 100%; max-width: 500px; border-left: 4px solid #d4af37; text-align: left; }
-.review-card__stars { color: #d4af37; font-size: 1.3rem; margin-bottom: 12px; }
-.review-card__text { font-style: italic; color: #ccc; margin-bottom: 15px; }
-.review-card__author { color: #fff; text-align: right; font-weight: 600; }
+/* --- Сетка --------------------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  justify-items: center;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid--duo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-/* BEM: Форма */
-.form { background: #161618; padding: 40px; border-radius: 10px; max-width: 650px; margin: 0 auto; border: 1px solid #2a2a2e; text-align: left; }
-.form__group { margin-bottom: 20px; }
-.form__label { display: block; margin-bottom: 8px; font-weight: 600; color: #ccc; }
-.form__input { width: 100%; padding: 14px; background-color: #0f0f11; border: 1px solid #333; color: #fff; border-radius: 4px; font-family: inherit; font-size: 1rem; transition: border-color 0.3s; }
-.form__input:focus { outline: none; border-color: #d4af37; }
-.form__input--textarea { resize: vertical; min-height: 120px; }
-.form__submit { width: 100%; margin-top: 10px; }
+/* --- О нас --------------------------------------------------------------- */
+.about {
+  text-align: center;
+}
+.about__text {
+  margin: 0 auto 40px;
+  max-width: 800px;
+  color: #b3b3b3;
+  font-size: 1.15rem;
+}
+.about__img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  filter: grayscale(100%) contrast(1.2);
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+.about__img:hover {
+  filter: grayscale(0%) contrast(1.1);
+  transform: scale(1.02);
+}
 
-/* BEM: Подвал */
-.footer { background-color: #080809; padding: 50px 20px 20px; border-top: 1px solid #1a1a1c; }
-.footer__content { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; text-align: center; gap: 30px; margin-bottom: 30px; }
-@media (min-width: 768px) { .footer__content { flex-direction: row; justify-content: space-around; text-align: left; } }
-.footer__title { color: #d4af37; font-size: 1.3rem; margin-bottom: 15px; }
-.footer__text { color: #777; margin-bottom: 8px; }
-.footer__copyright { text-align: center; color: #555; padding-top: 20px; border-top: 1px solid #1a1a1c; font-size: 0.9rem; }
+/* --- Мастера ------------------------------------------------------------- */
+.master-card {
+  background: #161618;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  border: 1px solid #2a2a2e;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.master-card:hover {
+  transform: translateY(-8px);
+  border-color: #d4af37;
+}
+.master-card__img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+.master-card:hover .master-card__img {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+.master-card__name {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.master-card__role {
+  color: #d4af37;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* --- Услуги -------------------------------------------------------------- */
+.card {
+  background: #161618;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  border: 1px solid #2a2a2e;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #d4af37;
+}
+.card__icon {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  color: #d4af37;
+}
+.card__title {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+.card__desc {
+  color: #999;
+  margin-bottom: 20px;
+}
+.card__price {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: #d4af37;
+  font-weight: 700;
+}
+
+/* --- Отзывы -------------------------------------------------------------- */
+.review-card {
+  background-color: #161618;
+  padding: 35px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  border-left: 4px solid #d4af37;
+  text-align: left;
+}
+.review-card__stars {
+  color: #d4af37;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+.review-card__text {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+.review-card__author {
+  display: block;
+  color: #fff;
+  text-align: right;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* --- Форма --------------------------------------------------------------- */
+.form {
+  background: #161618;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 650px;
+  margin: 0 auto;
+  border: 1px solid #2a2a2e;
+  text-align: left;
+}
+.form__group {
+  margin-bottom: 20px;
+}
+.form__label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ccc;
+}
+.form__input {
+  width: 100%;
+  padding: 14px;
+  background-color: #0f0f11;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+.form__input:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+.form__input--textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form__submit {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* --- Футер --------------------------------------------------------------- */
+.footer {
+  background-color: #080809;
+  padding: 50px 20px 20px;
+  border-top: 1px solid #1a1a1c;
+}
+.footer__content {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+}
+@media (min-width: 768px) {
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+.footer__title {
+  color: #d4af37;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.footer__text {
+  color: #777;
+  margin-bottom: 8px;
+}
+.footer__link {
+  color: inherit;
+  text-decoration: none;
+}
+.footer__copyright {
+  text-align: center;
+  color: #555;
+  padding-top: 20px;
+  border-top: 1px solid #1a1a1c;
+  font-size: 0.9rem;
+}
